@@ -1,0 +1,97 @@
+---
+layout: default
+title: Tags
+permalink: /tag/
+icon: tags
+---
+
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+.tagCloud {
+    position:relative;
+    display: block;
+    width: 400px;
+    height: 400px;
+    margin: 20px auto 0;
+}
+.tagCloud a {
+    position:absolute;
+    top:0px;
+    left:0px;
+    text-decoration:none;
+    padding: 3px 6px;
+    color: #2ca6cb;
+}
+.tagCloud a:hover{
+    color: orchid;
+}
+
+@media screen and (max-width: 768px){
+    .tagCloud {
+        display: none;
+    }
+}
+</style>
+<div class="page clearfix">
+
+    <div class="left">
+        <h1>{{page.title}}</h1>
+        <div class="tagCloud">
+            {% for tag in site.tags %}
+            <a href="#{{ tag | first }}">{{ tag | first }}</a>
+            {% endfor %}
+        </div>
+        <hr>
+        {% capture tags %}
+          {% for tag in site.tags %}
+            {{ tag[0] }}
+          {% endfor %}
+        {% endcapture %}
+        {% assign sortedtags = tags | split:' ' | sort %}
+
+        <ul>
+        {% for tag in sortedtags %}
+          <h2 id="{{ tag }}">{{ tag }}</h2>
+          {% for post in site.tags[tag] %}
+            <li>
+                <time>
+                {{ post.date | date:"%F" }} {{ post.date | date: "%a" }}.
+                </time>
+                <a class="title" href="{{ post.url }}">{{ post.title }}</a>
+
+                {% include category.html %}
+                {% include tag.html %}
+            </li>
+          {% endfor %}
+        {% endfor %}
+        </ul>
+
+    </div>
+    <button class="anchor"><i class="fa fa-anchor"></i></button>
+    <div class="right">
+        <div class="wrap">
+
+            <!-- Content -->
+            <div class="side content">
+                <div>
+                    Content
+                </div>
+                <ul id="content-side" class="content-ul">
+                    {% for tag in sortedtags %}
+                    <li>
+                        <a class="scroll" href="#{{ tag }}">
+                            {{ tag }} ({{ site.tags[tag].size }})
+                        </a>
+                    </li>
+                    {% endfor %}
+
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <!-- <div class="side">bbbb</div> -->
+        </div>
+    </div>
+</div>
+<script src="{{ "/js/pageContent.js " | prepend: site.baseurl }}" charset="utf-8"></script>
+<script src="{{ "/js/tagCloud.js " | prepend: site.baseurl }}" charset="utf-8"></script>
+<script src="{{ "/js/tags.js " | prepend: site.baseurl }}" charset="utf-8"></script>
