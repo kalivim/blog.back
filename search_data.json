@@ -8,6 +8,7 @@ layout: null
     "title": "{{ post.title | xml_escape }}",
     "url": " {{ post.url | xml_escape }}",
     "category": "{{ post.categories[0] | xml_escape }}"
+    "description": "{{ post.content | xml_escape }}"
   },
   {% endfor %}
 
