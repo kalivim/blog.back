@@ -1,10 +1,16 @@
-<div id="site_search" class="text-center">
-    <input type="text" id="search_box" placeholder="Search">
-    <button class="btn btn-default" id="site_search_do"></button>
+<div class="search-wrapper">
+    <div id="site_search" class="text-center input-holder">
+        <input placeholder="Search" id="search_box" type="text" class="search-input" placeholder="请输入关键词" name="hewenqi">
+        <input type="hidden" name="q">
+        <button id="site_search_do" class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
+    </div>
+
+    <span class="close" onclick="searchToggle(this, event);"></span>
+    <ul id="search_results"></ul>
 </div>
 
-<ul id="search_results"></ul>
 <script type="text/javascript" src="/js/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="/css/sidebar-search.css">
-<script src="/js/lunr.min.js"></script>
-<script src="/js/search.js"></script>
+<script type="text/javascript" src="/js/lunr.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/search-form.css">
+<script type="text/javascript" src="/js/hovertreesearch.js"></script>
+<script type="text/javascript" src="/js/search.js"></script>
