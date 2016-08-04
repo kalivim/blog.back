@@ -2,7 +2,7 @@
 layout: post
 title: 告别rm,自制回收站
 tags: shell Linux
-categories: linux
+categories: Linux
 ---
 
 * TOC 
@@ -18,7 +18,7 @@ categories: linux
 
 我的做法非常简单，回收脚本直接作为一个新命令，使用的时候想删除就删除，想回收就回收，连从回收站恢复的功能都不需要，想恢复文件，自己用mv从回收站移出来就行了。
 
-~~~
+```shell
 # !/bin/bash
 
 readonly trash_home=/tmp/trash
@@ -37,7 +37,7 @@ do
 		mv -i $target ${dest};
 	fi
 done
-~~~
+```
 
 在`/etc/profile.d`目录新建文件`trash`，将以上代码粘贴进去，然后赋予其可执行权限。
 
