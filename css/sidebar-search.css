@@ -1,9 +1,7 @@
 #search_results {
     font-size: 14px;
     list-style-type: none;
-    padding-top: 10px;
-    padding-left: 10px;
 }
 #search_box{
-    padding: 4px;
+    padding: 5px;
 }
