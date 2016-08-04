@@ -7,7 +7,7 @@
 
 # Site settings
 title: Kionf
-brief-intro: My zone
+brief-intro: 黑夜给了我黑色的眼睛，而我却用它寻找光明。
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.kionf.com" # the base hostname & protocol for your site
 
