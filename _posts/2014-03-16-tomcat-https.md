@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Tomcat Https 配置
-tags: tomcat Http Https ssl Java
-categories: Java
+tags: tomcat Https Java
+categories: Tomcat
 ---
 * TOC 
 {:toc}
