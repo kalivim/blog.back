@@ -20,7 +20,7 @@ OK让我们来一起kickstart吧
 
 `理论性知识建议大概看下,先按照步骤做一遍知到大概思路,在仔细看会更好(个人建议)`
 
-### `1.1` 什么是PXE?
+#### 1) 什么是PXE?
 
 > PXE，全名`Pre-boot Execution Environment`，预启动执行环境；
 通过网络接口启动计算机，不依赖本地存储设备（如硬盘）或本地已安装的操作系统；
@@ -29,7 +29,7 @@ OK让我们来一起kickstart吧
 PXE客户端会调用网际协议(IP)、用户数据报协议(UDP)、动态主机设定协议(DHCP)、小型文件传输协议(TFTP)等网络协议；
 PXE客户端(client)这个术语是指机器在PXE启动过程中的角色。一个PXE客户端可以是一台服务器、笔记本电脑或者其他装有PXE启动代码的机器（我们电脑的网卡）。
 
-### `1.2` PXE工作过程
+#### 2) PXE工作过程
 
 
 ![PXE](http://ww1.sinaimg.cn/large/0060lm7Tgw1f6xsskxex0j30gn0fptar.jpg)
@@ -60,7 +60,7 @@ OS Server和客户端建立连接后，将开始传输软件包，客户端将�
 
 **`如果是用虚拟机测试需要关闭虚拟网卡DHCP功能`**
 
-### 1) 安装包
+#### 1) 安装包
 
 ```bash 
 [root@CentOS6.5 ~]# yum -y install dhcp
@@ -71,7 +71,7 @@ OS Server和客户端建立连接后，将开始传输软件包，客户端将�
 /usr/share/man/man5/dhcpd.conf.5.gz
 ```
 
-### 2) 编辑配置文件
+#### 2) 编辑配置文件
 
 `[root@CentOS6.5 ~]# vim /etc/dhcp/dhcp.conf`
 
@@ -97,11 +97,11 @@ DHCPDARGS=eth1  # 指定监听网卡
 
 ## 3. 安装TFTP
 
-### 1) TFTP简介:
+#### 1) TFTP简介:
 
 `TFTP（Trivial File Transfer Protocol,简单文件传输协议）是TCP/IP协议族中的一个用来在客户机与服务器之间进行简单文件传输的协议，提供不复杂、开销不大的文件传输服务。端口号为69。`
 
-### 2) TFTP安装配置
+#### 2) TFTP安装配置
 
 ```bash
 [root@CentOS6.5 ~]# yum -y install tftp-server
@@ -176,18 +176,19 @@ boot.msg  initrd.img  isolinux.cfg  pxelinux.0  TRANS.TBL   vmlinuz
 
 >通常，我们在安装操作系统的过程中，需要大量的和服务器交互操作，为了减少这个交互过程，kickstart就诞生了。使用这种kickstart，只需事先定义好一个Kickstart自动应答配置文件ks.cfg（通常存放在安装服务器上），并让安装程序知道该配置文件的位置，在安装过程中安装程序就可以自己从该文件中读取安装配置，这样就避免了在安装过程中多次的人机交互，从而实现无人值守的自动化安装。
 
-#### **`生成kickstart配置文件的三种方法：`**
-
+**`生成kickstart配置文件的三种方法：`**
 
 - 方法1、 每安装好一台Centos机器，Centos安装程序都会创建一个kickstart配置文件，记录你的真实安装配置。如果你希望实现和某系统类似的安装，可以基于该系统的kickstart配置文件来生成你自己的kickstart配置文件。（生成的文件名字叫anaconda-ks.cfg位于/root/anaconda-ks.cfg）
 - 方法2、Centos提供了一个图形化的kickstart配置工具。在任何一个安装好的Linux系统上运行该工具，就可以很容易地创建你自己的kickstart配置文件。kickstart配置工具命令为rsystem-config-kickstart,网上有很多用CentOS桌面版生成ks文件的文章，如果有现成的系统就没什么可说。但没有现成的，也没有必要去用桌面版，命令行也很简单。
 - 方法3、阅读kickstart配置文件的手册。用任何一个文本编辑器都可以创建你自己的kickstart配置文件。
- 
 
 
-#### `这里贴出我的ks.cfg,这个是CentOS6.8的,可以根据需求更改`
 
-**`这里是官方文档`[CentOS](https://access.redhat.com/documentation/zh-CN/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-kickstart2-options.html)**
+
+
+**`这里贴出我的ks.cfg,这个是CentOS6.8的,可以根据需求更改`**
+
+**`这里是官方文档`[详解ks.cfg配置文件语句CentOS](https://access.redhat.com/documentation/zh-CN/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-kickstart2-options.html)**
 
 ```bash
 #platform=x86, AMD64, 或 Intel EM64T
@@ -229,7 +230,7 @@ clearpart --all
 
 ```
 
-### 8. 整合Default配置文件实现无人值守
+## 8. 整合Default配置文件实现无人值守
 
 `vim /var/lib/tftpboot/pxelinux.cfg/default`
 
@@ -243,7 +244,7 @@ label ks
 # ksdevice=eth0代表当客户端有多块网卡的时候，要实现自动化需要设置从eth1安装，不指定的话，安装的时候系统会让你选择，那就不叫全自动化了
 ```
 
-### 9. 打开系统电源,出去吃个饭,过会回来,系统就以经装好了
+## 9. 打开系统电源,出去吃个饭,过会回来,系统就以经装好了
 
 **`关闭服务端的iptables,selinux`**
 
@@ -251,4 +252,5 @@ label ks
 service iptables stop
 setenforce 0
 ```
+
 >其cobbler也可实现无人值守,属于工具
