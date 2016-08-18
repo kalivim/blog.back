@@ -248,3 +248,4 @@ label ks
 service iptables stop
 setenforce 0
 ```
+>起cobbler也可实现无人值守,属于工具
