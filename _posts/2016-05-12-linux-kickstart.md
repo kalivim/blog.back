@@ -178,9 +178,12 @@ boot.msg  initrd.img  isolinux.cfg  pxelinux.0  TRANS.TBL   vmlinuz
 
 #### **`生成kickstart配置文件的三种方法：`**
 
+
 - 方法1、 每安装好一台Centos机器，Centos安装程序都会创建一个kickstart配置文件，记录你的真实安装配置。如果你希望实现和某系统类似的安装，可以基于该系统的kickstart配置文件来生成你自己的kickstart配置文件。（生成的文件名字叫anaconda-ks.cfg位于/root/anaconda-ks.cfg）
 - 方法2、Centos提供了一个图形化的kickstart配置工具。在任何一个安装好的Linux系统上运行该工具，就可以很容易地创建你自己的kickstart配置文件。kickstart配置工具命令为rsystem-config-kickstart,网上有很多用CentOS桌面版生成ks文件的文章，如果有现成的系统就没什么可说。但没有现成的，也没有必要去用桌面版，命令行也很简单。
 - 方法3、阅读kickstart配置文件的手册。用任何一个文本编辑器都可以创建你自己的kickstart配置文件。
+ 
+
 
 #### `这里贴出我的ks.cfg,这个是CentOS6.8的,可以根据需求更改`
 
@@ -248,4 +251,4 @@ label ks
 service iptables stop
 setenforce 0
 ```
->起cobbler也可实现无人值守,属于工具
+>其cobbler也可实现无人值守,属于工具
