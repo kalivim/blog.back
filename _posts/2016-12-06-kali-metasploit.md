@@ -22,7 +22,7 @@ categories: Hacker Kali
 
 下载官方提供的安装脚本，并执行
 
-```
+``` bash
 curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall &&   chmod 755 msfinstall &&   ./msfinstall
 ```
 
@@ -48,7 +48,7 @@ curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/t
 
 `service postgresql start`
 
-```
+``` bash
 
 #切换到普通用户
 su - postgres
@@ -74,7 +74,7 @@ postgres=# \q
 
 > 在我的机器上是这个文件，有可能会不同，名字一样自行查找
 
-```
+``` bash
 #共修改2处
 
 更改 #listen_addresses = ‘localhost’
@@ -86,7 +86,7 @@ postgres=# \q
 
 `vim /var/lib/pgsql/data/pg_hba.conf`
 
-```
+``` bash
 #文件末尾处
 更改 host    all         all         127.0.0.1/32          ident
 为 host    all         all         127.0.0.1/32          md5
@@ -107,7 +107,7 @@ postgres=# \q
 
 **添加如下内容**
 
-```
+``` bash
 production:
   adapter: "postgresql"
   database: "msf4"
