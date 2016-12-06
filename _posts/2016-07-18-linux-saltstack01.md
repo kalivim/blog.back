@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Linux 自动化运维之SlatStack01
+title: Linux 自动化运维之SlatStack安装
 category: Linux
 tags: Linux 自动化运维
 ---
