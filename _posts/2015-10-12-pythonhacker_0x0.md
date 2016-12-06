@@ -2,7 +2,7 @@
 layout: post
 title: Python黑客之旅0x0
 tags: Python黑客之旅
-category: Python
+categories: Python Hacker
 ---
 * TOC 
 {:toc}
