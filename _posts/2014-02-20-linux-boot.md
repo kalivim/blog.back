@@ -5,7 +5,8 @@ tags: Linux
 categories: Linux
 ---
 
-
+* TOC 
+{:toc}
 
 
 ![](http://image.beekka.com/blog/201308/bg2013081708.png)
