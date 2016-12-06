@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Python黑客之旅0x4
-category: Python
+categories: Python Hacker
 description: Python信息安全中的应用
 keywords: Python, KaliLinux
 ---
