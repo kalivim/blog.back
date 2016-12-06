@@ -9,7 +9,7 @@
 title: Kionf
 brief-intro: 人懒惰久了,稍微努力一下就以为在拼命。
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://www.kionf.com" # the base hostname & protocol for your site
+url: "https://kionf.com" # the base hostname & protocol for your site
 
 permalink: /:year/:month/:day/:title/
 
