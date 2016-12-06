@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Python黑客之旅0x5
-category: Python
+categories: Python Hacker
 tags: Python黑客之旅
 ---
 
