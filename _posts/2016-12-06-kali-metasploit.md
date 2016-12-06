@@ -22,9 +22,9 @@ tags: Kali Hacker Metasploit
 
 下载官方提供的安装脚本，并执行
 
-`
+```
 curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall &&   chmod 755 msfinstall &&   ./msfinstall
-`
+```
 
 > 静静等待它下载完。。。`msfinstall`脚本只会安装metasploit，不会安装postgresql
 
