@@ -2,7 +2,7 @@
 layout: post
 title: RedHat6/CentOS6 安装Metasploit 
 tags: Kali Hacker Metasploit
-category: Hacker Kali 
+categories: Hacker Kali 
 ---
 
 * TOC 
