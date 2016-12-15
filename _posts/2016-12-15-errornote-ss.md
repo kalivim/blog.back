@@ -27,7 +27,7 @@ shadowsocks start failed
 
 `vim /usr/local/lib/python3.5/dist-packages/shadowsocks/crypto/openssl.py `
 
-> 路径不由不同根据报错路径而定
+> 路径不同根据报错路径而定
 
 ### 2. 修改libcrypto.EVP_CIPHER_CTX_cleanup.argtypes 
 
