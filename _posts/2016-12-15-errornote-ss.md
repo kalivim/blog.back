@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ShadowSocks启动报错undefined symbol: EVP_CIPHER_CTX_cleanup
+title: ShadowSocks启动报错
 category: ErrorNote
 tags: ShadowSocks ErrorNote Proxy
 ---
