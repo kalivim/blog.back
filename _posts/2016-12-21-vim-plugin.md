@@ -8,7 +8,7 @@ tags: Vim YouCompleteMe
 * TOC 
 {:toc}
 
-![Vim演示|center|0](https://github.com/kalivim/kalivim.github.io/raw/master/images/2016-12-21/vim-plugins.gif "演示")
+![Vim演示](https://github.com/kalivim/kalivim.github.io/raw/master/images/2016-12-21/vim-plugins.gif "演示")
 
 > 如图是VIM自定义插件及配置后的演示，虽然有Pycharm但是算不上轻量级，写个运维小脚本根本用不到，一般笔者只有在写Django或读python项目源码的时候会用，so我们开始吧
 
